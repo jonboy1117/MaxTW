@@ -4,9 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
+  
           http://www.apache.org/licenses/LICENSE-2.0
-
+  
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -54,6 +54,10 @@
         <group gid="log" />
     </permission>
 
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" >
+        <group gid="sdcard_r" />
+    </permission>
+
     <permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
         <group gid="sdcard_rw" />
         <group gid="media_rw" />
@@ -61,6 +65,10 @@
 
     <permission name="android.permission.WRITE_MEDIA_STORAGE" >
         <group gid="media_rw" />
+    </permission>
+
+    <permission name="com.sec.android.app.sysscope.permission.SYSSCOPE_ACCESS_SYSTEM_INFO" >
+        <group gid="radio" />
     </permission>
 
     <permission name="android.permission.ACCESS_MTP" >
@@ -95,12 +103,7 @@
         <group gid="net_bw_acct" />
     </permission>
 
-    <!-- Group that can access usb devices for printing -->
-    <permission name="android.permission.ACCESS_USB" >
-        <group gid="usb" />
-    </permission>
-
-    <!-- The group that releated with VPN -->
+   <!-- VPN -->
     <permission name="android.permission.SAMSUNG_MODIFY_ROUTE" >
         <group gid="net_admin" />
     </permission>
@@ -112,18 +115,6 @@
     <permission name="android.permission.SAMSUNG_MODIFY_IPTABLES" >
         <group gid="net_raw" />
     </permission>
-
-    <!-- VPN -->
-    <permission name="android.permission.SAMSUNG_MODIFY_ROUTE" >
-        <group gid="net_admin" />
-    </permission>
-    <permission name="android.permission.SAMSUNG_TUNTAP" >
-        <group gid="vpn" />
-    </permission>
-	<permission name="android.permission.SAMSUNG_MODIFY_IPTABLES" >
-        <group gid="net_raw" />
-    </permission>
-
 
     <!-- ================================================================== -->
     <!-- ================================================================== -->
@@ -189,12 +180,18 @@
     <assign-permission name="android.permission.BACKUP" uid="shell" />
     <assign-permission name="android.permission.FORCE_STOP_PACKAGES" uid="shell" />
     <assign-permission name="android.permission.STOP_APP_SWITCHES" uid="shell" />
+    <assign-permission name="android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY" uid="shell" />
+    <assign-permission name="android.permission.GRANT_REVOKE_PERMISSIONS" uid="shell" />
+    <assign-permission name="android.permission.SET_KEYBOARD_LAYOUT" uid="shell" />
+    <assign-permission name="android.permission.GET_DETAILED_TASKS" uid="shell" />
+    <assign-permission name="android.permission.SET_SCREEN_COMPATIBILITY" uid="shell" />
+    <assign-permission name="android.permission.READ_EXTERNAL_STORAGE" uid="shell" />
+    <assign-permission name="android.permission.WRITE_EXTERNAL_STORAGE" uid="shell" />
 
     <assign-permission name="android.permission.MODIFY_AUDIO_SETTINGS" uid="media" />
     <assign-permission name="android.permission.ACCESS_DRM" uid="media" />
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="media" />
     <assign-permission name="android.permission.WAKE_LOCK" uid="media" />
-    <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="drm" />
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />
 
