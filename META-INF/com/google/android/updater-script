@@ -16,6 +16,7 @@ package_extract_dir("supersu", "/system");
 package_extract_dir("patch", "/system");
 show_progress(0.240000, 0);
 ui_print("Creating system links...");
+symlink("/system/bin/su", "/system/xbin/su");
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
 symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
